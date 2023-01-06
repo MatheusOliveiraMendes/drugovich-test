@@ -1,0 +1,135 @@
+.title-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.title {
+    font-size: 1.7rem;
+    margin-right: auto;
+}
+
+.account-icon {
+    margin-right: 10px
+}
+
+.create-button {
+    display: flex;
+    justify-content: center;
+    width: 95px;
+    align-items: center;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4486EA;
+    color: white;
+    font-size: 14px;
+    img {
+        margin-right: 10px;
+    }
+}
+
+.edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E18F53;
+    color: white;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+table {
+    table-layout: auto;
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+tr {
+    background-color: white;
+}
+
+td {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.fit-cell {
+    width: 0;
+}
+
+.cnpj-cell {
+    font-size: 12px;
+}
+
+.status-display {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #2ACC30;
+
+    &.inactive {
+        background-color: #EC2424;
+    }
+}
+
+@media (max-width: 780px) {
+    tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    td {
+        display: block;
+        padding: 0;
+    }
+
+    .fit-cell {
+        width: unset;
+    }
+
+    .cnpj-cell {
+        text-align: right;
+        padding-top: 3px;
+    }
+
+    .status-cell {
+        padding-top: 5px;
+    }
+}
+
+@media (max-width: 540px) {
+    .title-bar .title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 380px) {
+    tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .cnpj-cell {
+        text-align: left;
+    }
+
+    .status-cell {
+        padding-top: 0;
+    }
+}

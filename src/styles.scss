@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  background-color: #ddd;
+}
+
+*, *::after, *::before {
+  font-family: Monda;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  display: block;
+}
+
+select, textarea, input {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+

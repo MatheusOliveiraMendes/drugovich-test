@@ -1,0 +1,31 @@
+<div class="title-bar">
+  <img class="account-icon" src="/assets/clientIcon.svg"/>
+  <div class="title">Listagem de Clientes</div>
+  <a routerLink="/cliente">
+    <button class="create-button">
+      <img src="/assets/plusIcon.svg"/>
+      <span>NOVO</span>
+    </button>
+  </a>
+</div>
+
+<table>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td class="name-cell fit-cell">{{client.name}}</td>
+      <td class="cnpj-cell">{{client.cnpj}}</td>
+      <td class="status-cell">
+        <div class="status-display" [class.inactive]="client.status === 'Inativo'"></div>
+        {{client.status}}
+      </td>
+      <td class="edit-cell fit-cell">
+        <a [routerLink]="'/cliente/' + client.id">
+          <button class="edit-button">EDITAR</button>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    Exibindo {{clients.length}} de {{clients.length}} client{{clients.length === 1 ? "e" : "es"}}
+  </tfoot>
+</table>

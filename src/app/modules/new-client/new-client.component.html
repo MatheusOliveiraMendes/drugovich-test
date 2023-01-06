@@ -1,0 +1,39 @@
+<div class="title-bar">
+  <img class="account-icon" src="/assets/clientIcon.svg"/>
+  <div class="title">Novo Cliente</div>
+</div>
+
+<form class="client-form" #ngForm="ngForm" [formGroup]="client" (ngSubmit)="submitClient()">
+  <div class="field" [class.invalid]="client.controls.name.errors && ngForm.submitted">
+    <label for="name">Nome</label>
+    <input
+      id="name"
+      formControlName="name"
+      autocomplete="off"
+    />
+    <small *ngIf="client.controls.name.errors && ngForm.submitted">
+      <div *ngIf="client.controls.name.errors['required']">Campo obrigatório</div>
+    </small>
+  </div>
+  <div class="field" [class.invalid]="client.controls.cnpj.invalid && ngForm.submitted">
+    <label for="cnpj">CNPJ</label>
+    <input
+      id="cnpj"
+      mask="00.000.000/0000-00"
+      formControlName="cnpj"
+      autocomplete="off"
+    />
+    <small *ngIf="client.controls.cnpj.errors && ngForm.submitted">
+      <div *ngIf="client.controls.cnpj.errors['required']">Campo obrigatório</div>
+      <div *ngIf="client.controls.cnpj.errors['minlength']">Preencha o campo completamente</div>
+    </small>
+  </div>
+  <div class="field">
+    <label for="status">Status</label>
+    <select id="status" formControlName="status">
+      <option value="Ativo">Ativo</option>
+      <option value="Inativo">Inativo</option>
+    </select>
+  </div>
+  <button class="save-button" type="submit">SALVAR</button>
+</form>
